@@ -64,6 +64,6 @@ exports.App = class App {
     // const writeToAgainFinal = `${yyyy}/${mm}/${dd}/${today.getHours()}/${today.getMinutes()}`
 
 
-    await destination.write(anonymized, `new_destination`, { "file.name.template": "{{timestamp:unit=yyyy}}/{{timestamp:unit=MM}}/{{timestamp:unit=DD}}/{{timestamp:unit=hh}}/{{timestamp:unit=mm}}/{{topic}}-{{offset}}.gz" });
+    await destination.write(anonymized, `new_destination`, { "file.name.template": "{{timestamp:unit=yyyy}}/{{timestamp:unit=MM}}/{{timestamp:unit=DD}}/{{timestamp:unit=hh}}/{{timestamp:unit=mm}}/myfile.gz" });
   }
 };
