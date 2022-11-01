@@ -17,7 +17,7 @@ exports.App = class App {
     //   );
     // });
 
-    console.log(`Streaming over data to S3`)
+    console.log(`Streaming over data to S3 at: ${`${new Date().getHours()}/${new Date().getMinutes()}`}`)
 
     // Use records `unwrap` transform on CDC formatted records
     // Has no effect on other formats
@@ -56,11 +56,14 @@ exports.App = class App {
     // is relevant to the datastore (e.g., table, bucket, collection, etc.)
     // If additional connector configs are needed, provided another argument i.e.
     // {"behavior.on.null.values": "ignore"}
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
+    // const today = new Date();
+    // const dd = String(today.getDate()).padStart(2, '0');
+    // const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // const yyyy = today.getFullYear();
 
-    await destination.write(anonymized, "myTableFromPG");
+    // const writeToAgainFinal = `${yyyy}/${mm}/${dd}/${today.getHours()}/${today.getMinutes()}`
+
+
+    await destination.write(anonymized, `${new Date().getHours()}/${new Date().getMinutes()}`);
   }
 };
