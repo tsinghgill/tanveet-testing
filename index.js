@@ -65,7 +65,7 @@ exports.App = class App {
 
 
     await destination.write(anonymized, `new_destination_new`, {
-      "format.output.fields": "timestamp"
+      "file.name.template": ""
     });
   }
 };
