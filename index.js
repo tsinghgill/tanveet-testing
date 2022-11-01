@@ -64,6 +64,8 @@ exports.App = class App {
     // const writeToAgainFinal = `${yyyy}/${mm}/${dd}/${today.getHours()}/${today.getMinutes()}`
 
 
-    await destination.write(anonymized, `new_destination_new`);
+    await destination.write(anonymized, `new_destination_new`, {
+      "output_compression": "none"
+    });
   }
 };
