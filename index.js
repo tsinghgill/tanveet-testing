@@ -65,7 +65,7 @@ exports.App = class App {
 
 
     await destination.write(anonymized, `new_destination_new`, {
-      "file.name.template": ""
+      "file.name.prefix": "{{timestamp:unit=yyyy}}/{{timestamp:unit=MM}}/{{timestamp:unit=DD}}/{{timestamp:unit=hh}}/{{timestamp:unit=mm}}/{{topic}}-{{partition:padding=true}}-{{start_offset:padding=true}}.gz"
     });
   }
 };
