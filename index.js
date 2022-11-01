@@ -65,7 +65,7 @@ exports.App = class App {
 
 
     await destination.write(anonymized, `new_destination_new`, {
-      "file.name.template": "dir1/dir2/{{topic}}-{{partition:padding=true}}-{{start_offset:padding=true}}.gz"
+      "format.output.fields": "timestamp"
     });
   }
 };
