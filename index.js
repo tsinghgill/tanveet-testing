@@ -61,7 +61,6 @@ exports.App = class App {
     const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     const yyyy = today.getFullYear();
 
-    const writeTo = `${yyyy}/${mm}/${dd}/${today.getHours()}/${today.getMinutes()}`
-    await destination.write(anonymized, writeTo);
+    await destination.write(anonymized, "myTableFromPG");
   }
 };
