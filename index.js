@@ -22,7 +22,7 @@ exports.App = class App {
     let destination = await turbine.resources("meroxa_upsolver_s3");
 
     await destination.write(anonymized, `myTable_pg`, {
-      "file.name.template": "file-prefix-{{topic}}-{{partition}}-{{start_offset}}-{{timestamp:unit=yyyy}}-{{timestamp:unit=MM}}-{{timestamp:unit=dd}}"
+      "file.name.template": "file-prefix-{{partition}}-{{start_offset}}-{{timestamp:unit=yyyy}}-{{timestamp:unit=MM}}-{{timestamp:unit=dd}}"
     });
   }
 };
