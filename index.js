@@ -21,8 +21,6 @@ exports.App = class App {
 
     let destination = await turbine.resources("tanveets3");
 
-    await destination.write(anonymized, `myTable_pg`, {
-      "file.name.template": "{{timestamp:unit=yyyy}}/{{timestamp:unit=MM}}/{{timestamp:unit=DD}}/{{timestamp:unit=hh}}/{{timestamp:unit=mm}}/file.gz"
-    });
+    await destination.write(anonymized, `test_table_from_tanveet_testing`,);
   }
 };
