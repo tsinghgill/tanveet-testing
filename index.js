@@ -19,8 +19,10 @@ exports.App = class App {
 
     let anonymized = await turbine.process(records, this.anonymize);
 
-    let destination = await turbine.resources("tanveets3");
+    let destination = await turbine.resources("samirs_s3");
 
-    await destination.write(anonymized, `myTable_pg`);
+    await destination.write(anonymized, `myTable_pg`, {
+      "file.name.template": "{{timestamp:unit=yyyy}}/{{timestamp:unit=MM}}/{{timestamp:unit=DD}}/{{timestamp:unit=hh}}/{{timestamp:unit=mm}}/file.gz"
+    });
   }
 };
