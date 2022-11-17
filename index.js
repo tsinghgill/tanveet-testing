@@ -19,7 +19,7 @@ exports.App = class App {
 
     let anonymized = await turbine.process(records, this.anonymize);
 
-    let destination = await turbine.resources("tanveets3");
+    let destination = await turbine.resources("samirs_s3");
 
     await destination.write(anonymized, `test_table_from_tanveet_testing`,);
   }
