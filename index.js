@@ -21,6 +21,6 @@ exports.App = class App {
 
     let destination = await turbine.resources("samirs_s3");
 
-    await destination.write(anonymized, `test_table_from_tanveet_testing`,);
+    await destination.write(anonymized, `test_table_from_tanveet_testing`);
   }
 };
