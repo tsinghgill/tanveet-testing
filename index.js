@@ -13,7 +13,7 @@ exports.App = class App {
   }
 
   async run(turbine) {
-    let source = await turbine.resources("pg_to_s3");
+    let source = await turbine.resources("pg_db");
 
     let records = await source.records("myTable");
 
